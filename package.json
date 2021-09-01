@@ -4,7 +4,7 @@
   "description": "An app to introduce myself",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/eniko-galambos/cv-app/issues"
   },
-  "homepage": "https://github.com/eniko-galambos/cv-app#readme"
+  "homepage": "https://github.com/eniko-galambos/cv-app#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
+  }
 }
