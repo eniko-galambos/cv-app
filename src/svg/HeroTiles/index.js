@@ -17,7 +17,7 @@ const HeroTiles = () => {
         }
         `}</style>
       </defs>
-      <g className="opacity-80">
+      <g id="hero-tile-1" className="hero-tile opacity-80">
         <polygon
           className="fill-vivid-red"
           points="574.87 283.61 620.36 283.61 620.36 99.16 574.87 283.61"
@@ -147,7 +147,7 @@ const HeroTiles = () => {
           points="230.43 0 230.43 28.94 299.88 79.37 311.54 0 230.43 0"
         />
       </g>
-      <g className="opacity-80">
+      <g id="hero-tile-2" className="hero-tile opacity-80">
         <polygon
           className="fill-dark-night"
           points="594.62 157.19 545.84 263.24 616.51 219.13 594.62 157.19"
@@ -273,7 +273,7 @@ const HeroTiles = () => {
           points="342.49 258.9 362.55 157.19 312.19 157.19 312.19 271.7 326.07 342.09 342.49 258.9"
         />
       </g>
-      <g className="opacity-80">
+      <g id="hero-tile-3" className="hero-tile opacity-80">
         <polygon
           className="fill-gray-sand"
           points="0 315.22 0 396.47 44.95 315.22 0 315.22"
@@ -367,7 +367,7 @@ const HeroTiles = () => {
           points="0 396.47 0 467.31 28.46 441.43 63.16 472.04 44.95 315.22 0 396.47"
         />
       </g>
-      <g className="opacity-80">
+      <g id="hero-tile-4" className="hero-tile opacity-80">
         <polygon
           className="fill-spring-green"
           points="201.21 220.01 217.65 248.5 287.23 364.04 251.18 222.69 201.21 220.01"
@@ -461,7 +461,7 @@ const HeroTiles = () => {
           points="65.84 91.71 65.84 191.9 205.37 91.71 65.84 91.71"
         />
       </g>
-      <g className="opacity-80">
+      <g id="hero-tile-5" className="hero-tile opacity-80">
         <polygon
           className="fill-gray-200"
           points="501.13 270.55 565.72 202.16 501.13 173 501.13 270.55"
@@ -531,7 +531,7 @@ const HeroTiles = () => {
           points="501.13 125.44 621.08 173 501.13 54.74 501.13 125.44"
         />
       </g>
-      <g className="opacity-80">
+      <g id="hero-tile-6" className="hero-tile opacity-80">
         <polygon
           className="light-stroke fill-vivid-red"
           points="439.75 179.77 394.9 179.77 423.76 279.66 439.75 179.77"

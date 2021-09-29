@@ -19,6 +19,19 @@ const App = () => {
         pin: true,
       },
     });
+
+    for (let index = 1; index <= 6; index++) {
+      gsap.to(`#hero-tile-${index}`, {
+        scale: 1.005,
+        y: -10,
+        x: -index,
+        duration: 2,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+        delay: -index / 2,
+      });
+    }
   });
 
   return (
