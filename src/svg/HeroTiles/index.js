@@ -7,8 +7,8 @@ const HeroTiles = (props) => {
       id="hero-tiles"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-200 -50 1000 800"
-      onMouseOver={(event) => props.highlightHeroTilePiece(event)('front')}
-      onMouseOut={(event) => props.highlightHeroTilePiece(event)('back')}
+      onMouseOver={(event) => props.highlightTilePiece(event)('front')}
+      onMouseOut={(event) => props.highlightTilePiece(event)('back')}
     >
       <defs>
         <style>{`
@@ -737,7 +737,7 @@ const HeroTiles = (props) => {
 };
 
 HeroTiles.propTypes = {
-  highlightHeroTilePiece: PropTypes.func.isRequired,
+  highlightTilePiece: PropTypes.func.isRequired,
 };
 
 export default HeroTiles;
