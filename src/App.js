@@ -7,33 +7,7 @@ import HeroTiles from './svg/HeroTiles';
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  useEffect(() => {
-    gsap.to('#hero-tiles', {
-      x: 300,
-      duration: 3,
-      scrollTrigger: {
-        trigger: '#hero-tiles',
-        toggleActions: 'restart pause reverse pause',
-        scrub: 1,
-        start: 'top 0',
-        pin: true,
-      },
-    });
-
-    for (let index = 1; index <= 6; index++) {
-      gsap.to(`#hero-tile-${index}`, {
-        scale: 1.005,
-        y: -10,
-        x: -index,
-        duration: 2,
-        yoyo: true,
-        repeat: -1,
-        ease: 'sine.inOut',
-        delay: -index / 2,
-      });
-    }
-  });
-
+  // Animations
   const highlightHeroTilePiece = (event) => (direction) => {
     const target = event.target.closest('polygon');
 
@@ -65,6 +39,41 @@ const App = () => {
       });
     }
   };
+
+  const flyHeroTiles = () => {
+    for (let index = 1; index <= 6; index++) {
+      gsap.to(`#hero-tile-${index}`, {
+        scale: 1.005,
+        y: -10,
+        x: -index,
+        duration: 2,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+        delay: -index / 2,
+      });
+    }
+  };
+
+  const heroScroll = () => {
+    gsap.to('#hero-tile-1', {
+      x: 300,
+      duration: 3,
+      scrollTrigger: {
+        trigger: '#hero-tiles',
+        toggleActions: 'restart pause reverse pause',
+        scrub: 1,
+        start: 'top 0',
+        pin: true,
+      },
+    });
+  };
+
+  // Hooks
+  useEffect(() => {
+    heroScroll();
+    flyHeroTiles();
+  });
 
   return (
     <div>
