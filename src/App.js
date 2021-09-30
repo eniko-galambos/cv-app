@@ -34,13 +34,45 @@ const App = () => {
     }
   });
 
+  const highlightHeroTilePiece = (event) => (direction) => {
+    const target = event.target.closest('polygon');
+
+    if (!target) {
+      return;
+    }
+
+    if (direction === 'front') {
+      gsap.fromTo(
+        `#${target.id}`,
+        {
+          filter: 'brightness(100%)',
+          webkitFilter: 'brightness(100%)',
+        },
+        {
+          scale: 0.92,
+          rotate: 1,
+          filter: 'brightness(92%)',
+          webkitFilter: 'brightness(92%)',
+          transformOrigin: 'center',
+        },
+      );
+    } else {
+      gsap.to(`#${target.id}`, {
+        scale: 1,
+        rotate: 0,
+        opacity: 1,
+        filter: 'none',
+      });
+    }
+  };
+
   return (
     <div>
       <div className="fixed right-2 top-2 flex">
         <p className="m-2">HU</p>
         <p className="m-2">Download</p>
       </div>
-      <HeroTiles />
+      <HeroTiles highlightHeroTilePiece={highlightHeroTilePiece} />
       <div className="flex justify-center">
         <p>Scroll down</p>
       </div>
