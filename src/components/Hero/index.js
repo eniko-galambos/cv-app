@@ -19,8 +19,7 @@ const Hero = () => {
           webkitFilter: 'brightness(100%)',
         },
         {
-          scale: 0.92,
-          rotate: 1,
+          rotate: -1,
           filter: 'brightness(92%)',
           webkitFilter: 'brightness(92%)',
           transformOrigin: 'center',
@@ -28,17 +27,63 @@ const Hero = () => {
       );
     } else {
       gsap.to(`#${target.id}`, {
-        scale: 1,
         rotate: 0,
-        opacity: 1,
         filter: 'none',
       });
     }
   };
 
-  const flyTiles = () => {
+  const onScroll = () => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#hero-tiles',
+        toggleActions: 'restart pause reverse pause',
+        scrub: 1,
+        start: 'top 0',
+        pin: true,
+      },
+    });
+
     for (let index = 1; index <= 6; index++) {
-      gsap.to(`#hero-tile-${index}`, {
+      tl.to(
+        `.hero-tile-piece-${index}`,
+        {
+          stagger: 0.03,
+          scale: 0.7,
+          opacity: 0,
+          transformOrigin: 'center',
+        },
+        '>-=90%',
+      );
+    }
+  };
+
+  const fallTiles = (tl) => {
+    tl.fromTo(
+      `.hero-tile`,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 0.8,
+        duration: 1.5,
+      },
+    );
+    tl.from(
+      `.hero-tile`,
+      {
+        y: -20,
+        duration: 3,
+        stagger: 0.08,
+        ease: 'elastic.out(1, 0.3)',
+      },
+      '<+=0',
+    );
+  };
+
+  const flyTiles = (tl) => {
+    for (let index = 1; index <= 6; index++) {
+      tl.to(`#hero-tile-${index}`, {
         scale: 1.005,
         y: -10,
         x: -index,
@@ -51,24 +96,13 @@ const Hero = () => {
     }
   };
 
-  const onScroll = () => {
-    gsap.to('#hero-tile-1', {
-      x: 300,
-      duration: 3,
-      scrollTrigger: {
-        trigger: '#hero-tiles',
-        toggleActions: 'restart pause reverse pause',
-        scrub: 1,
-        start: 'top 0',
-        pin: true,
-      },
-    });
-  };
-
   // Hooks
   useEffect(() => {
     onScroll();
-    flyTiles();
+
+    const tl = gsap.timeline();
+    fallTiles(tl);
+    flyTiles(tl);
   });
 
   return (
