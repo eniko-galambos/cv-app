@@ -19,7 +19,6 @@ const Hero = () => {
           webkitFilter: 'brightness(100%)',
         },
         {
-          rotate: -1,
           filter: 'brightness(92%)',
           webkitFilter: 'brightness(92%)',
           transformOrigin: 'center',
@@ -27,7 +26,6 @@ const Hero = () => {
       );
     } else {
       gsap.to(`#${target.id}`, {
-        rotate: 0,
         filter: 'none',
       });
     }
