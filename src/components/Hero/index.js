@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import HeroTiles from '../../svg/HeroTiles';
+import Arrow from '../../svg/Arrow';
+import { TweenLite } from 'gsap/gsap-core';
 
 const Hero = () => {
   // Animations
@@ -94,8 +96,47 @@ const Hero = () => {
     }
   };
 
+  const revealScrollDown = () => {
+    const tl = gsap.timeline();
+
+    tl.set('#scroll-down', {
+      opacity: 0,
+      duration: 2,
+    });
+    tl.fromTo(
+      '#scroll-down',
+      {
+        y: -10,
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        delay: 2,
+      },
+    );
+  };
+
+  const hideScrollDown = () => {
+    gsap.fromTo(
+      '#scroll-down',
+      { opacity: 1 },
+      {
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: '#hero-tiles',
+          start: 'top 0',
+        },
+      },
+    );
+  };
+
   // Hooks
   useEffect(() => {
+    revealScrollDown();
+    hideScrollDown();
     onScroll();
 
     const tl = gsap.timeline();
@@ -106,8 +147,14 @@ const Hero = () => {
   return (
     <div>
       <HeroTiles highlightTilePiece={highlightTilePiece} />
-      <div className="flex justify-center">
-        <p>Scroll down</p>
+      <div
+        id="scroll-down"
+        className="fixed bottom-8 left-8 flex flex-col items-center"
+      >
+        <p className="font-janetta text-4xl mb-4">Scroll down</p>
+        <div className="w-4 h-4 animate-bounce">
+          <Arrow />
+        </div>
       </div>
     </div>
   );

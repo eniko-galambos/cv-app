@@ -9,6 +9,10 @@ module.exports = {
         'warm-orange': '#f2721a',
       },
       fill: (theme) => theme('colors'),
+      fontFamily: {
+        roboto: ['Roboto'],
+        janetta: ['Janetta Silloam'],
+      },
     },
   },
 };
