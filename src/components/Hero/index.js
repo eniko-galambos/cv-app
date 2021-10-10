@@ -125,7 +125,7 @@ const Hero = () => {
         opacity: 0,
         duration: 0.5,
         scrollTrigger: {
-          trigger: '#hero-tiles',
+          trigger: '#title',
           start: 'top 0',
         },
       },
