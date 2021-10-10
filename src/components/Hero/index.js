@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import HeroTiles from '../../svg/HeroTiles';
 import Arrow from '../../svg/Arrow';
-import { TweenLite } from 'gsap/gsap-core';
 
 const Hero = () => {
   // Animations
@@ -33,7 +32,7 @@ const Hero = () => {
     }
   };
 
-  const onScroll = () => {
+  const explodeTiles = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '#hero-tiles',
@@ -137,7 +136,7 @@ const Hero = () => {
   useEffect(() => {
     revealScrollDown();
     hideScrollDown();
-    onScroll();
+    explodeTiles();
 
     const tl = gsap.timeline();
     fallTiles(tl);
