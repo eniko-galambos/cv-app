@@ -150,8 +150,8 @@ const Hero = () => {
         id="scroll-down"
         className="fixed bottom-8 left-8 flex flex-col items-center"
       >
-        <p className="font-janetta text-4xl mb-4">Scroll down</p>
-        <div className="w-4 h-4 animate-bounce">
+        <p className="font-janetta text-4xl mb-3 cursor-default">Scroll down</p>
+        <div className="w-6 h-6 animate-bounce">
           <Arrow />
         </div>
       </div>
