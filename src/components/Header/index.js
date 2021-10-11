@@ -66,20 +66,17 @@ const Header = () => {
     <header className="fixed right-5 top-5 left-5 flex justify-between z-10">
       <div id="title">
         <a
-          onMouseOver={(event) => hoverTitle('front')}
-          onFocus={(event) => hoverTitle('front')}
-          onMouseOut={(event) => hoverTitle('back')}
-          onBlur={(event) => hoverTitle('back')}
+          onMouseOver={() => hoverTitle('front')}
+          onFocus={() => hoverTitle('front')}
+          onMouseOut={() => hoverTitle('back')}
+          onBlur={() => hoverTitle('back')}
           href="#"
         >
-          <h1
-            id="titleLabel"
-            className="text-8xl font-extralight uppercase cursor-pointer"
-          >
-            Enikő Galambos
+          <h1 id="titleLabel" className="text-8xl cursor-pointer font-janetta">
+            Enikö Galambos
           </h1>
         </a>
-        <div id="titleLine" className="h-0.5 w-20 bg-black mt-3 ml-2"></div>
+        <div id="titleLine" className="h-0.5 w-20 bg-black mt-1"></div>
       </div>
       <div className="flex">
         <p>HU</p>

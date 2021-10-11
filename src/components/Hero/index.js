@@ -148,10 +148,10 @@ const Hero = () => {
       <HeroTiles highlightTilePiece={highlightTilePiece} />
       <div
         id="scroll-down"
-        className="fixed bottom-8 left-8 flex flex-col items-center"
+        className="fixed bottom-6 left-28 flex flex-col items-center"
       >
-        <p className="font-janetta text-4xl mb-3 cursor-default">Scroll down</p>
-        <div className="w-6 h-6 animate-bounce">
+        <p className="text-xs mb-2 cursor-default">Scroll down</p>
+        <div className="w-4 h-4 animate-bounce">
           <Arrow />
         </div>
       </div>
