@@ -96,40 +96,34 @@ const Hero = () => {
   };
 
   const revealScrollDown = () => {
-    const tl = gsap.timeline();
+    if (window.scrollY === 0) {
+      const tl = gsap.timeline();
 
-    tl.set('#scroll-down', {
-      opacity: 0,
-      duration: 2,
-    });
-    tl.fromTo(
-      '#scroll-down',
-      {
-        y: -10,
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 2,
-        delay: 2,
-      },
-    );
+      tl.fromTo(
+        '#scroll-down',
+        {
+          y: -10,
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2,
+          delay: 2,
+        },
+      );
+    }
   };
 
   const hideScrollDown = () => {
-    gsap.fromTo(
-      '#scroll-down',
-      { opacity: 1 },
-      {
-        opacity: 0,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: '#title',
-          start: 'top 0',
-        },
+    gsap.to('#scroll-down', {
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: '#title',
+        start: 'top 0',
       },
-    );
+    });
   };
 
   // Hooks
@@ -148,7 +142,7 @@ const Hero = () => {
       <HeroTiles highlightTilePiece={highlightTilePiece} />
       <div
         id="scroll-down"
-        className="fixed bottom-6 left-28 flex flex-col items-center"
+        className="fixed bottom-6 left-8 flex flex-col items-center opacity-100"
       >
         <p className="text-xs mb-2 cursor-default">Scroll down</p>
         <div className="w-4 h-4 animate-bounce">
