@@ -96,23 +96,28 @@ const Hero = () => {
   };
 
   const revealScrollDown = () => {
-    if (window.scrollY === 0) {
-      const tl = gsap.timeline();
+    gsap.set('#scroll-down', {
+      opacity: 0,
+    });
 
-      tl.fromTo(
-        '#scroll-down',
-        {
-          y: -10,
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 2,
-          delay: 2,
-        },
-      );
-    }
+    setTimeout(() => {
+      if (document.documentElement.scrollTop === 0) {
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+          '#scroll-down',
+          {
+            y: -10,
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+          },
+        );
+      }
+    }, 2000);
   };
 
   const hideScrollDown = () => {

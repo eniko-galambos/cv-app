@@ -13,7 +13,7 @@ const Header = () => {
 
   const lowerTitle = () => {
     gsap.to('#title', {
-      scale: 0.3,
+      scale: 0.4,
       y: 0,
       scrollTrigger: {
         trigger: '#hero-tiles',
