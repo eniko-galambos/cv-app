@@ -4,41 +4,41 @@
 
 @font-face {
   font-family: 'Janetta Silloam';
-  src: url('../assets/Janetta-Silloam.otf');
+  src: url('./assets/fonts/Janetta-Silloam.otf');
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Black.ttf');
+  src: url('./assets/fonts/Roboto-Black.ttf');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Bold.ttf');
+  src: url('./assets/fonts/Roboto-Bold.ttf');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Light.ttf');
+  src: url('./assets/fonts/Roboto-Light.ttf');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Medium.ttf');
+  src: url('./assets/fonts/Roboto-Medium.ttf');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Regular.ttf');
+  src: url('./assets/fonts/Roboto-Regular.ttf');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('../assets/Roboto-Thin.ttf');
+  src: url('./assets/fonts/Roboto-Thin.ttf');
   font-weight: 100;
   font-style: normal;
 }
