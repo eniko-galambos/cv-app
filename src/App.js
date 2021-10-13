@@ -17,15 +17,13 @@ const App = () => {
       <div id="#images" className="relative">
         <img
           src={profileBack}
-          className="absolute left-48 opacity-50"
+          className="absolute left-1/2 opacity-50 w-1/3"
           alt="Profile of me"
-          style={{ width: 700 }}
         ></img>
         <img
           src={profileFront}
-          className="absolute left-72 -top-28"
+          className="absolute left-1/3 -top-28 w-1/4"
           alt="Profile of me"
-          style={{ width: 500 }}
         ></img>
       </div>
     </div>
