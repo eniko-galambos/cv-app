@@ -20,6 +20,7 @@ const Header = () => {
         toggleActions: 'restart pause reverse pause',
         scrub: 1,
         start: 'top 0',
+        end: '+=3000',
         pin: true,
       },
       transformOrigin: 'top left',
@@ -28,22 +29,22 @@ const Header = () => {
 
   const hoverTitle = (direction) => {
     if (direction === 'front') {
-      gsap.to('#titleLine', {
+      gsap.to('#title-line', {
         scaleX: 2,
         transformOrigin: 'left',
         duration: 0.2,
       });
-      gsap.to('#titleLabel', {
+      gsap.to('#title-label', {
         color: '#14142d',
         opacity: 0.7,
         duration: 0.2,
       });
     } else {
-      gsap.to('#titleLine', {
+      gsap.to('#title-line', {
         scaleX: 1,
         duration: 0.2,
       });
-      gsap.to('#titleLabel', {
+      gsap.to('#title-label', {
         color: 'black',
         opacity: 1,
         duration: 0.2,
@@ -72,11 +73,11 @@ const Header = () => {
           onBlur={() => hoverTitle('back')}
           href="#"
         >
-          <h1 id="titleLabel" className="text-8xl cursor-pointer font-janetta">
+          <h1 id="title-label" className="text-8xl cursor-pointer font-janetta">
             Enikö Galambos
           </h1>
         </a>
-        <div id="titleLine" className="h-0.5 w-20 bg-black mt-1"></div>
+        <div id="title-line" className="h-0.5 w-20 bg-black mt-1"></div>
       </div>
       <div className="flex">
         <p>HU</p>
