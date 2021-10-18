@@ -12,7 +12,7 @@ const showAndHideImages = () => {
       end: '+=2000',
       pin: true,
       toggleActions: 'restart pause reverse pause',
-      scrub: 1,
+      scrub: 0.35,
     },
   });
 

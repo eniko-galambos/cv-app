@@ -18,7 +18,7 @@ const Header = () => {
       scrollTrigger: {
         trigger: '#hero-tiles',
         toggleActions: 'restart pause reverse pause',
-        scrub: 1,
+        scrub: 0.35,
         start: 'top 0',
         end: '+=3000',
         pin: true,
