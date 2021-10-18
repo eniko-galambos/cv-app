@@ -21,22 +21,42 @@ const showAndHideImages = () => {
     {
       scale: 0.9,
       opacity: 0,
+      y: -10,
     },
     {
       scale: 1,
       opacity: 1,
       duration: 0.3,
+      y: 0,
     },
   );
   tl.to('#profile-images', {
-    scale: 1,
-    opacity: 1,
+    scale: 1.1,
     duration: 1,
   });
+  tl.to(
+    '#profile-image-back',
+    {
+      scale: 1.3,
+      duration: 1,
+      transformOrigin: 'center',
+    },
+    '<+=0',
+  );
+  tl.to(
+    '#profile-image-front',
+    {
+      scale: 1.2,
+      duration: 1,
+      transformOrigin: 'center',
+    },
+    '<+=0',
+  );
   tl.to('#profile-images', {
-    scale: 1.1,
+    scale: 1.2,
     opacity: 0,
     duration: 0.3,
+    y: 10,
   });
 };
 
@@ -49,16 +69,26 @@ const ProfileImages = () => {
   return (
     <div id="profile">
       <div id="profile-images" className="relative h-96">
-        <img
-          src={profileBack}
-          className="absolute left-1/2 opacity-50 top-36 w-1/3"
-          alt="Profile of me"
-        ></img>
-        <img
-          src={profileFront}
+        <div
+          className="absolute opacity-30 top-36 w-1/3"
+          style={{ clipPath: 'inset(10px 10px)', left: '40%' }}
+        >
+          <img
+            id="profile-image-back"
+            src={profileBack}
+            alt="Profile of me"
+          ></img>
+        </div>
+        <div
           className="absolute left-1/3 top-8 w-1/4"
-          alt="Profile of me"
-        ></img>
+          style={{ clipPath: 'inset(10px 10px)' }}
+        >
+          <img
+            id="profile-image-front"
+            src={profileFront}
+            alt="Profile of me"
+          ></img>
+        </div>
       </div>
     </div>
   );
