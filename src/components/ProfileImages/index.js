@@ -9,7 +9,7 @@ const showAndHideImages = () => {
     scrollTrigger: {
       trigger: '#profile-images',
       start: 'top 0',
-      end: '+=2000',
+      end: '+=2500',
       pin: true,
       toggleActions: 'restart pause reverse pause',
       scrub: 0.35,
@@ -70,7 +70,7 @@ const ProfileImages = () => {
     <div id="profile">
       <div id="profile-images" className="relative h-96">
         <div
-          className="absolute opacity-30 top-36 w-1/3"
+          className="absolute opacity-30 top-28 w-1/3"
           style={{ clipPath: 'inset(10px 10px)', left: '40%' }}
         >
           <img

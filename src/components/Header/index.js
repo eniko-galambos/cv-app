@@ -18,9 +18,9 @@ const Header = () => {
       scrollTrigger: {
         trigger: '#hero-tiles',
         toggleActions: 'restart pause reverse pause',
-        scrub: 0.35,
+        scrub: 1,
         start: 'top 0',
-        end: '+=3000',
+        end: '+=2000',
         pin: true,
       },
       transformOrigin: 'top left',
@@ -32,22 +32,22 @@ const Header = () => {
       gsap.to('#title-line', {
         scaleX: 2,
         transformOrigin: 'left',
-        duration: 0.2,
+        duration: 0.3,
       });
       gsap.to('#title-label', {
         color: '#14142d',
         opacity: 0.7,
-        duration: 0.2,
+        duration: 0.3,
       });
     } else {
       gsap.to('#title-line', {
         scaleX: 1,
-        duration: 0.2,
+        duration: 0.3,
       });
       gsap.to('#title-label', {
         color: 'black',
         opacity: 1,
-        duration: 0.2,
+        duration: 0.3,
       });
     }
   };
@@ -73,11 +73,14 @@ const Header = () => {
           onBlur={() => hoverTitle('back')}
           href="#"
         >
-          <h1 id="title-label" className="text-8xl cursor-pointer font-janetta">
+          <h1
+            id="title-label"
+            className="text-5xl md:text-6xl lg:text-8xl cursor-pointer font-janetta"
+          >
             Enikö Galambos
           </h1>
         </a>
-        <div id="title-line" className="h-0.5 w-20 bg-black mt-1"></div>
+        <div id="title-line" className="h-0 md:h-0.5 w-20 bg-black"></div>
       </div>
       <div className="flex">
         <p>HU</p>
