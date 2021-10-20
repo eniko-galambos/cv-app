@@ -14,6 +14,7 @@ const showAndHideImages = () => {
       toggleActions: 'restart pause reverse pause',
       scrub: 0.35,
     },
+    transformOrigin: 'center',
   });
 
   tl.fromTo(
@@ -21,13 +22,11 @@ const showAndHideImages = () => {
     {
       scale: 0.9,
       opacity: 0,
-      y: -10,
     },
     {
       scale: 1,
       opacity: 1,
-      duration: 0.3,
-      y: 0,
+      duration: 0.4,
     },
   );
   tl.to('#profile-images', {
@@ -39,7 +38,6 @@ const showAndHideImages = () => {
     {
       scale: 1.3,
       duration: 1,
-      transformOrigin: 'center',
     },
     '<+=0',
   );
@@ -48,15 +46,13 @@ const showAndHideImages = () => {
     {
       scale: 1.2,
       duration: 1,
-      transformOrigin: 'center',
     },
     '<+=0',
   );
   tl.to('#profile-images', {
     scale: 1.2,
     opacity: 0,
-    duration: 0.3,
-    y: 10,
+    duration: 0.4,
   });
 };
 
@@ -70,24 +66,25 @@ const ProfileImages = () => {
     <div id="profile">
       <div id="profile-images" className="relative h-96">
         <div
-          className="absolute opacity-30 top-28 w-1/3"
-          style={{ clipPath: 'inset(10px 10px)', left: '40%' }}
+          className="absolute opacity-30 top-28 w-1/3 shadow-md"
+          style={{ left: '60%' }}
         >
-          <img
-            id="profile-image-back"
-            src={profileBack}
-            alt="Profile of me"
-          ></img>
+          <div style={{ clipPath: 'inset(0)' }}>
+            <img
+              id="profile-image-back"
+              src={profileBack}
+              alt="Profile of me"
+            ></img>
+          </div>
         </div>
-        <div
-          className="absolute left-1/3 top-8 w-1/4"
-          style={{ clipPath: 'inset(10px 10px)' }}
-        >
-          <img
-            id="profile-image-front"
-            src={profileFront}
-            alt="Profile of me"
-          ></img>
+        <div className="absolute top-8 w-1/4 shadow-md" style={{ left: '55%' }}>
+          <div style={{ clipPath: 'inset(0)' }}>
+            <img
+              id="profile-image-front"
+              src={profileFront}
+              alt="Profile of me"
+            ></img>
+          </div>
         </div>
       </div>
     </div>

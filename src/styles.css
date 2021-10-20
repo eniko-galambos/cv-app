@@ -42,3 +42,14 @@
   font-weight: 100;
   font-style: normal;
 }
+
+.cv-light-stroke {
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.75px;
+}
+
+.cv-drop-shadow {
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.15));
+}

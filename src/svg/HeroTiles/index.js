@@ -10,17 +10,7 @@ const HeroTiles = (props) => {
       onMouseOver={(event) => props.highlightTilePiece(event)('front')}
       onMouseOut={(event) => props.highlightTilePiece(event)('back')}
     >
-      <defs>
-        <style>{`
-        .light-stroke {
-          stroke:#000;
-          stroke-linecap:round;
-          stroke-linejoin:round;
-          stroke-width:0.75px;
-        }
-        `}</style>
-      </defs>
-      <g id="hero-tile-1" className="hero-tile opacity-80">
+      <g id="hero-tile-1" className="hero-tile opacity-80 cv-drop-shadow">
         <polygon
           id="hero-tile-piece-1-1"
           className="hero-tile-piece hero-tile-piece-1 hero-tile-piece hero-tile-piece-6 fill-vivid-red"
@@ -182,7 +172,7 @@ const HeroTiles = (props) => {
           points="230.43 0 230.43 28.94 299.88 79.37 311.54 0 230.43 0"
         />
       </g>
-      <g id="hero-tile-2" className="hero-tile opacity-80">
+      <g id="hero-tile-2" className="hero-tile opacity-80 cv-drop-shadow">
         <polygon
           id="hero-tile-piece-2-1"
           className="hero-tile-piece hero-tile-piece-2 fill-dark-night"
@@ -339,7 +329,7 @@ const HeroTiles = (props) => {
           points="342.49 258.9 362.55 157.19 312.19 157.19 312.19 271.7 326.07 342.09 342.49 258.9"
         />
       </g>
-      <g id="hero-tile-3" className="hero-tile opacity-80">
+      <g id="hero-tile-3" className="hero-tile opacity-80 cv-drop-shadow">
         <polygon
           id="hero-tile-piece-3-1"
           className="hero-tile-piece hero-tile-piece-3 fill-gray-sand"
@@ -456,7 +446,7 @@ const HeroTiles = (props) => {
           points="0 396.47 0 467.31 28.46 441.43 63.16 472.04 44.95 315.22 0 396.47"
         />
       </g>
-      <g id="hero-tile-4" className="hero-tile opacity-80">
+      <g id="hero-tile-4" className="hero-tile opacity-80 cv-drop-shadow">
         <polygon
           id="hero-tile-piece-4-1"
           className="hero-tile-piece hero-tile-piece-4 fill-spring-green"
@@ -573,7 +563,7 @@ const HeroTiles = (props) => {
           points="65.84 91.71 65.84 191.9 205.37 91.71 65.84 91.71"
         />
       </g>
-      <g id="hero-tile-5" className="hero-tile opacity-80">
+      <g id="hero-tile-5" className="hero-tile opacity-80 cv-drop-shadow">
         <polygon
           id="hero-tile-piece-5-1"
           className="hero-tile-piece hero-tile-piece-5 fill-gray-200"
@@ -660,75 +650,75 @@ const HeroTiles = (props) => {
           points="501.13 125.44 621.08 173 501.13 54.74 501.13 125.44"
         />
       </g>
-      <g id="hero-tile-6" className="hero-tile opacity-80">
+      <g id="hero-tile-6" className="hero-tile opacity-80 cv-drop-shadow">
         <polygon
           id="hero-tile-piece-6-1"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="439.75 179.77 394.9 179.77 423.76 279.66 439.75 179.77"
         />
         <polygon
           id="hero-tile-piece-6-2"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-warm-orange"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-warm-orange"
           points="384.87 479.55 563.11 257.27 400.94 347.75 384.87 479.55"
         />
         <polygon
           id="hero-tile-piece-6-3"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="459.11 479.55 563.11 479.55 563.11 429.01 500.89 390.26 459.11 479.55"
         />
         <polygon
           id="hero-tile-piece-6-4"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="500.89 390.26 563.11 429.01 563.11 257.27 500.89 390.26"
         />
         <polygon
           id="hero-tile-piece-6-5"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="459.11 479.55 563.11 257.27 384.87 479.55 459.11 479.55"
         />
         <polygon
           id="hero-tile-piece-6-6"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="342.77 409.47 342.77 479.55 384.87 479.55 400.94 347.75 342.77 409.47"
         />
         <polygon
           id="hero-tile-piece-6-7"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="342.77 288.67 342.77 347.75 400.94 347.75 342.77 288.67"
         />
         <polygon
           id="hero-tile-piece-6-8"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="342.77 347.75 342.77 409.47 400.94 347.75 342.77 347.75"
         />
         <polygon
           id="hero-tile-piece-6-9"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="494.45 241.97 463.03 229.72 423.76 279.66 400.94 347.75 466.05 260.86 494.45 241.97"
         />
         <polygon
           id="hero-tile-piece-6-10"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="423.76 279.66 342.77 246.48 342.77 288.67 400.94 347.75 423.76 279.66"
         />
         <polygon
           id="hero-tile-piece-6-11"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="494.45 179.77 494.45 241.97 563.11 257.27 563.11 179.77 494.45 179.77"
         />
         <polygon
           id="hero-tile-piece-6-12"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="466.05 260.86 400.94 347.75 563.11 257.27 494.45 241.97 466.05 260.86"
         />
         <polygon
           id="hero-tile-piece-6-13"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="494.45 241.97 494.45 179.77 439.75 179.77 423.76 279.66 463.03 229.72 494.45 241.97"
         />
         <polygon
           id="hero-tile-piece-6-14"
-          className="light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
+          className="cv-light-stroke hero-tile-piece hero-tile-piece-6 fill-vivid-red"
           points="394.9 179.77 342.77 179.77 342.77 246.48 423.76 279.66 394.9 179.77"
         />
       </g>
