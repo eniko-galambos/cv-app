@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
 const showAndHideImages = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '#profile-images',
+      trigger: '#personal-details',
       start: 'top 0',
       end: '+=2500',
       pin: true,
@@ -57,17 +57,20 @@ const showAndHideImages = () => {
 };
 
 // Hooks
-const ProfileImages = () => {
+const PersonalDetails = () => {
   useEffect(() => {
     showAndHideImages();
   });
 
   return (
-    <div id="profile">
-      <div id="profile-images" className="relative h-96">
+    <section id="personal-details" className="pt-8 flex">
+      <div className="flex-1 mt-16 ml-8">
+        <h2 className="text-5xl font-extralight ">Personal details</h2>
+      </div>
+      <div id="profile-images" className="relative flex-1">
         <div
-          className="absolute opacity-30 top-28 w-1/3 shadow-md"
-          style={{ left: '60%' }}
+          className="absolute opacity-30 top-20 w-2/3 shadow-md"
+          style={{ left: '25%' }}
         >
           <div style={{ clipPath: 'inset(0)' }}>
             <img
@@ -77,7 +80,7 @@ const ProfileImages = () => {
             ></img>
           </div>
         </div>
-        <div className="absolute top-8 w-1/4 shadow-md" style={{ left: '55%' }}>
+        <div className="absolute w-1/2 shadow-md" style={{ left: '15%' }}>
           <div style={{ clipPath: 'inset(0)' }}>
             <img
               id="profile-image-front"
@@ -87,8 +90,8 @@ const ProfileImages = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default ProfileImages;
+export default PersonalDetails;

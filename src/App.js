@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Hero from './components/Hero';
 import Header from './components/Header';
-import ProfileImages from './components/ProfileImages';
+import PersonalDetails from './components/PersonalDetails';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +13,9 @@ const App = () => {
     <div>
       <Header />
       <Hero />
-      <ProfileImages />
+      <main>
+        <PersonalDetails />
+      </main>
     </div>
   );
 };
