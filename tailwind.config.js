@@ -9,7 +9,10 @@ module.exports = {
         'warm-orange': '#f2721a',
       },
       fill: (theme) => theme('colors'),
-      fontFamily: {},
+      fontFamily: {
+        newyork: ['NewYork'],
+        fashion: ['Fashion Fetish'],
+      },
     },
   },
 };

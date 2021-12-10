@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Fashion Fetish';
+  src: url('./assets/fonts/Fashion-Fetish-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fashion Fetish';
+  src: url('./assets/fonts/Fashion-Fetish-Light-Italic.ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fashion Fetish';
+  src: url('./assets/fonts/Fashion-Fetish-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fashion Fetish';
+  src: url('./assets/fonts/Fashion-Fetish-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NewYork';
+  src: url('./assets/fonts/NewYork.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
