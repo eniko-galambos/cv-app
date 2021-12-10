@@ -2,54 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Janetta Silloam';
-  src: url('./assets/fonts/Janetta-Silloam.otf');
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Black.ttf');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Bold.ttf');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Light.ttf');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Medium.ttf');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('./assets/fonts/Roboto-Thin.ttf');
-  font-weight: 100;
-  font-style: normal;
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.cv-light-stroke {
-  stroke: #000;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 0.75px;
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.cv-drop-shadow {
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.15));
+address,
+em {
+  font-style: normal;
 }

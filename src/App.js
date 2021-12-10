@@ -2,20 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Hero from './components/Hero';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { Draggable } from 'gsap/Draggable';
 import Header from './components/Header';
-import PersonalDetails from './components/PersonalDetails';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(Draggable);
 
 const App = () => {
   return (
     <div>
       <Header />
-      <Hero />
-      <main>
-        <PersonalDetails />
-      </main>
+      <main></main>
     </div>
   );
 };
