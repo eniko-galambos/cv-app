@@ -4,8 +4,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Draggable } from 'gsap/Draggable';
-import Header from './components/Header';
 import Cursor from './components/Cursor';
+import Header from './components/Header';
+import Hero from './components/Hero';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -30,7 +31,9 @@ const App = () => {
     <div onMouseMove={onMouseMove}>
       <Cursor ref={cursorRef}></Cursor>
       <Header />
-      <main></main>
+      <main>
+        <Hero />
+      </main>
     </div>
   );
 };
