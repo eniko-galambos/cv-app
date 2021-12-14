@@ -41,7 +41,7 @@ const Cursor = forwardRef(function Cursor(props, ref) {
   };
 
   const init = () => {
-    const interactiveElements = document.querySelectorAll('a');
+    const interactiveElements = document.querySelectorAll('a, button');
 
     interactiveElements.forEach((element) => {
       element.style.cursor = 'none';
