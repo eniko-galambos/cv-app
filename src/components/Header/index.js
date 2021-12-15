@@ -126,6 +126,9 @@ const Header = () => {
 
   // Hooks
   useEffect(() => {
+    gsap.set('#menu-nav a hr', {
+      scaleX: 0,
+    });
     gsap.set('#menu-nav', {
       opacity: 0,
       display: 'none',
@@ -166,7 +169,7 @@ const Header = () => {
         >
           <a
             href="#"
-            className="mb-2"
+            className="mb-3"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
@@ -175,7 +178,7 @@ const Header = () => {
           </a>
           <a
             href="#"
-            className="mb-2"
+            className="mb-3"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
@@ -184,7 +187,7 @@ const Header = () => {
           </a>
           <a
             href="#"
-            className="mb-2"
+            className="mb-3"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
@@ -193,7 +196,7 @@ const Header = () => {
           </a>
           <a
             href="#"
-            className="mb-2"
+            className="mb-3"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
@@ -202,7 +205,7 @@ const Header = () => {
           </a>
           <a
             href="#"
-            className="mb-2"
+            className="mb-3"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
