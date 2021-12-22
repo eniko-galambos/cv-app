@@ -7,6 +7,7 @@ import { Draggable } from 'gsap/Draggable';
 import Cursor from './components/Cursor';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Intro from './components/Intro';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -33,6 +34,7 @@ const App = () => {
       <Header />
       <main>
         <Hero />
+        <Intro />
       </main>
     </div>
   );
