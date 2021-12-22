@@ -5,9 +5,16 @@ import Arrow from '../../svg/Arrow';
 const Hero = () => {
   // Animations
   const tl = gsap.timeline();
+  const scrolltl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#hero-title',
+      toggleActions: 'play none reverse reverse',
+      start: 'top 0',
+    },
+  });
 
   const revealTitle = () => {
-    gsap.from('#hero-title span', {
+    return gsap.from('#hero-title span', {
       opacity: 0,
       y: 70,
       skewX: -12,
@@ -16,8 +23,25 @@ const Hero = () => {
     });
   };
 
+  const hideTitle = () => {
+    return gsap.fromTo(
+      '#hero-title span',
+      {
+        opacity: 1,
+        x: 0,
+      },
+      {
+        opacity: 0,
+        x: -150,
+        stagger: 0.1,
+        duration: 0.6,
+        ease: 'power1.inOut',
+      },
+    );
+  };
+
   const revealArrow = () => {
-    gsap.fromTo(
+    return gsap.fromTo(
       '#hero-arrow',
       {
         opacity: 0,
@@ -29,8 +53,15 @@ const Hero = () => {
     );
   };
 
+  const hideArrow = () => {
+    return gsap.to('#hero-arrow', {
+      opacity: 0,
+      duration: 0.1,
+    });
+  };
+
   const revealMeetMe = () => {
-    gsap.fromTo(
+    return gsap.fromTo(
       '#hero-meet-me',
       {
         opacity: 0,
@@ -42,8 +73,15 @@ const Hero = () => {
     );
   };
 
+  const hideMeetMe = () => {
+    return gsap.to('#hero-meet-me', {
+      opacity: 0,
+      duration: 0.3,
+    });
+  };
+
   const moveArrow = () => {
-    gsap.to('#hero-arrow', {
+    return gsap.to('#hero-arrow', {
       rotate: -15,
       duration: 0.7,
       scaleY: 0.9,
@@ -66,6 +104,10 @@ const Hero = () => {
     tl.add(revealArrow, '<1.2');
     tl.add(revealMeetMe, '>0.3');
     tl.add(moveArrow, '>1.2');
+
+    scrolltl.add(hideMeetMe());
+    scrolltl.add(hideArrow());
+    scrolltl.add(hideTitle());
   });
 
   return (
