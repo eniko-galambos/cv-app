@@ -44,12 +44,23 @@ const Intro = () => {
     );
   };
 
+  const rotateImageText = () => {
+    gsap.to('#profile-image-text', {
+      rotate: 360,
+      duration: 40,
+      transformOrigin: 'center',
+      ease: 'none',
+      repeat: -1,
+    });
+  };
+
   // Hooks
   useEffect(() => {
     titleScrolltl.add(revealTitle());
     titleScrolltl.add(revealSubtitle(), 0.5);
 
     moveFadedTitle();
+    rotateImageText();
   });
 
   return (
@@ -73,7 +84,7 @@ const Intro = () => {
       <div className="bg-gray-100 py-60 ">
         <div className="relative flex flex-col items-center">
           <div
-            className="w-1/2 md:w-1/3 lg:w-1/4"
+            className="w-1/2 md:w-1/3 lg:w-1/4 mt-2 sm:mt-3 md:mt-4 lg:mt-5"
             style={{ clipPath: 'circle(45%)' }}
           >
             <img
@@ -85,16 +96,16 @@ const Intro = () => {
           <svg
             viewBox="0 0 240 240"
             className="absolute"
-            style={{ height: '112%' }}
+            style={{ height: '110%' }}
           >
             <defs>
               <path
                 d="M98.31,60.9A39.14,39.14,0,1,0,139.14,100h0A39.15,39.15,0,0,0,100,60.86"
                 id="profile-circle-text"
-                transform="translate(20 7)"
+                transform="translate(20 14)"
               />
             </defs>
-            <text dy="70" textLength="245">
+            <text dy="70" textLength="245" id="profile-image-text">
               <textPath
                 className="font-newyork text-xl"
                 xlinkHref="#profile-circle-text"
