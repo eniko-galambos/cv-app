@@ -54,6 +54,20 @@ const Intro = () => {
     });
   };
 
+  const scaleImage = () => {
+    gsap.to('#profile-image', {
+      scale: 1.2,
+      duration: 1,
+      scrollTrigger: {
+        trigger: '#intro',
+        start: '60% 100%',
+        toggleActions: 'restart pause reverse pause',
+        scrub: 0.3,
+      },
+      transformOrigin: 'center',
+    });
+  };
+
   // Hooks
   useEffect(() => {
     titleScrolltl.add(revealTitle());
@@ -61,6 +75,7 @@ const Intro = () => {
 
     moveFadedTitle();
     rotateImageText();
+    scaleImage();
   });
 
   return (
@@ -87,11 +102,7 @@ const Intro = () => {
             className="w-1/2 md:w-1/3 lg:w-1/4 mt-2 sm:mt-3 md:mt-4 lg:mt-5"
             style={{ clipPath: 'circle(45%)' }}
           >
-            <img
-              id="profile-image-front"
-              src={profileImg}
-              alt="Profile of me"
-            ></img>
+            <img id="profile-image" src={profileImg} alt="Profile of me"></img>
           </div>
           <svg
             viewBox="0 0 240 240"
