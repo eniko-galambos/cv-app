@@ -4,7 +4,15 @@ import Arrow from '../../svg/Arrow';
 
 const Hero = () => {
   // Animations
-  const tl = gsap.timeline();
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: 'body',
+      toggleActions: 'play reset reset reset',
+      start: 'top 1px',
+      end: 'top -1px',
+      once: true,
+    },
+  });
   const scrolltl = gsap.timeline({
     scrollTrigger: {
       trigger: '#hero-title',
@@ -54,10 +62,14 @@ const Hero = () => {
   };
 
   const hideArrow = () => {
-    return gsap.to('#hero-arrow', {
-      opacity: 0,
-      duration: 0.1,
-    });
+    return gsap.fromTo(
+      '#hero-arrow',
+      { opacity: 1 },
+      {
+        opacity: 0,
+        duration: 0.1,
+      },
+    );
   };
 
   const revealMeetMe = () => {
@@ -74,10 +86,14 @@ const Hero = () => {
   };
 
   const hideMeetMe = () => {
-    return gsap.to('#hero-meet-me', {
-      opacity: 0,
-      duration: 0.3,
-    });
+    return gsap.fromTo(
+      '#hero-meet-me',
+      { opacity: 1 },
+      {
+        opacity: 0,
+        duration: 0.3,
+      },
+    );
   };
 
   const moveArrow = () => {
@@ -92,6 +108,10 @@ const Hero = () => {
 
   // Hooks
   useEffect(() => {
+    scrolltl.add(hideMeetMe());
+    scrolltl.add(hideArrow());
+    scrolltl.add(hideTitle());
+
     gsap.set('#hero-arrow', {
       opacity: 0,
       rotate: -10,
@@ -104,10 +124,6 @@ const Hero = () => {
     tl.add(revealArrow, '<1.2');
     tl.add(revealMeetMe, '>0.3');
     tl.add(moveArrow, '>1.2');
-
-    scrolltl.add(hideMeetMe());
-    scrolltl.add(hideArrow());
-    scrolltl.add(hideTitle());
   });
 
   return (
