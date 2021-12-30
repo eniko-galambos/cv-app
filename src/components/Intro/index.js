@@ -97,28 +97,24 @@ const Intro = () => {
         </h3>
       </div>
       <div className="bg-gray-100 py-60 ">
-        <div className="relative flex flex-col items-center">
+        <div className="relative flex flex-col items-center overflow-auto">
           <div
             className="w-1/2 md:w-1/3 lg:w-1/4 mt-2 sm:mt-3 md:mt-4 lg:mt-5"
-            style={{ clipPath: 'circle(45%)' }}
+            style={{ clipPath: 'circle(42%)' }}
           >
             <img id="profile-image" src={profileImg} alt="Profile of me"></img>
           </div>
-          <svg
-            viewBox="0 0 240 240"
-            className="absolute"
-            style={{ height: '110%' }}
-          >
+          <svg viewBox="0 0 240 240" className="absolute h-full">
             <defs>
               <path
                 d="M98.31,60.9A39.14,39.14,0,1,0,139.14,100h0A39.15,39.15,0,0,0,100,60.86"
                 id="profile-circle-text"
-                transform="translate(20 14)"
+                transform="translate(20 25)"
               />
             </defs>
-            <text dy="70" textLength="245" id="profile-image-text">
+            <text dy="70" textLength="247" id="profile-image-text">
               <textPath
-                className="font-newyork text-xl"
+                className="font-newyork text-2xl"
                 xlinkHref="#profile-circle-text"
               >
                 Say cheese <tspan className="fill-spring-green">*</tspan> Say
