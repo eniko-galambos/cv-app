@@ -17,6 +17,37 @@ const WhoAmI = () => {
           },
         },
       );
+
+      gsap.fromTo(
+        `#quote-${i + 1}`,
+        { y: 3 * innerHeight },
+        {
+          y: 1.5 * innerHeight,
+          scrollTrigger: {
+            trigger: `#panel-${i + 1}`,
+            start: 'top bottom',
+            end: 'bottom bottom',
+            toggleActions: 'restart pause reverse pause',
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.set(`#quote-${i + 1}`, { opacity: 0 });
+
+      gsap.fromTo(
+        `#quote-${i + 1}`,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: `#panel-${i + 1}`,
+            start: 'bottom bottom',
+            toggleActions: 'restart pause reverse pause',
+            duration: 1.5,
+          },
+        },
+      );
     });
   };
 
@@ -33,31 +64,43 @@ const WhoAmI = () => {
       <div className="w-screen flex">
         <div id="who-col-1" className="flex-1">
           <div className="w-full h-screen flex">
-            <div className="flex-1 flex justify-center items-center">
-              <p className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl opacity-80 px-5 lg:px-20">
+            <div className="flex-1">
+              <p
+                id="quote-1"
+                className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"
+              >
                 &quot;Always positive, who sees the difficulties as
                 challenges.&quot;
               </p>
             </div>
           </div>
           <div className="w-full h-screen flex">
-            <div className="flex-1 flex justify-center items-center">
-              <p className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl opacity-80 px-5 lg:px-20">
+            <div className="flex-1">
+              <p
+                id="quote-2"
+                className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"
+              >
                 &quot;Curious, who always wants to understand everything.&quot;
               </p>
             </div>
           </div>
           <div className="w-full h-screen flex">
-            <div className="flex-1 flex justify-center items-center">
-              <p className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl opacity-80 px-5 lg:px-20">
+            <div className="flex-1">
+              <p
+                id="quote-3"
+                className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"
+              >
                 &quot;Who is always eager to learn, and aspire to develop
                 herself.&quot;
               </p>
             </div>
           </div>
           <div className="w-full h-screen flex">
-            <div className="flex-1 flex justify-center items-center">
-              <p className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl opacity-80  px-5 lg:px-20">
+            <div className="flex-1">
+              <p
+                id="quote-4"
+                className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"
+              >
                 &quot;Curious, who always wants to understand everything.&quot;
               </p>
             </div>
