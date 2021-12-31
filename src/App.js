@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Draggable } from 'gsap/Draggable';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Cursor from './components/Cursor';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -13,6 +14,7 @@ import WhoAmI from './components/WhoAmI';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(Draggable);
+gsap.registerPlugin(ScrollToPlugin);
 
 const App = () => {
   const cursorRef = useRef();
@@ -31,8 +33,6 @@ const App = () => {
 
   useEffect(() => {
     const container = document.querySelector('#scroll-container');
-
-    console.log(`container.clientHeight`, container.clientHeight);
 
     let height;
 

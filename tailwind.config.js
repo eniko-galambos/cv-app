@@ -13,6 +13,9 @@ module.exports = {
         newyork: ['NewYork'],
         fashion: ['Fashion Fetish'],
       },
+      backgroundImage: {
+        'me-madeira': "url('/src/assets/images/madeira.jpg')",
+      },
     },
   },
 };

@@ -56,7 +56,7 @@ const Intro = () => {
 
   const scaleImage = () => {
     gsap.to('#profile-image', {
-      scale: 1.2,
+      scale: 1.3,
       duration: 1,
       scrollTrigger: {
         trigger: '#intro',
@@ -97,7 +97,7 @@ const Intro = () => {
         </h3>
       </div>
       <div className="bg-gray-100 py-60 ">
-        <div className="relative flex flex-col items-center overflow-auto">
+        <div className="relative flex flex-col items-center">
           <div
             className="w-1/2 md:w-1/3 lg:w-1/4 mt-2 sm:mt-3 md:mt-4 lg:mt-5"
             style={{ clipPath: 'circle(42%)' }}
