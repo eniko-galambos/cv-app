@@ -54,6 +54,10 @@ const App = () => {
         invalidateOnRefresh: true,
       },
     });
+
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
   });
 
   return (

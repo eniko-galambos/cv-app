@@ -7,7 +7,7 @@ const Intro = () => {
     scrollTrigger: {
       trigger: '#intro',
       toggleActions: 'play none none none',
-      start: 'center 90%',
+      start: 500,
     },
   });
 
@@ -79,7 +79,7 @@ const Intro = () => {
   });
 
   return (
-    <section id="intro" className="relative">
+    <section id="intro">
       <div className="relative mt-60 mb-40 text-center w-full">
         <div className="absolute flex justify-center w-full -top-28 md:-top-16 lg:-top-24">
           <p
@@ -104,7 +104,12 @@ const Intro = () => {
           >
             <img id="profile-image" src={profileImg} alt="Profile of me"></img>
           </div>
-          <svg viewBox="0 0 240 240" className="absolute h-full">
+          <svg
+            viewBox="0 0 240 240"
+            className="absolute h-full"
+            width="500"
+            height="500"
+          >
             <defs>
               <path
                 d="M98.31,60.9A39.14,39.14,0,1,0,139.14,100h0A39.15,39.15,0,0,0,100,60.86"
