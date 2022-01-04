@@ -6,7 +6,7 @@ const Hero = () => {
   // Animations
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: 'body',
+      trigger: '#hero-title',
       toggleActions: 'play reset reset reset',
       start: 'top 1px',
       end: 'top -1px',
@@ -17,7 +17,7 @@ const Hero = () => {
     scrollTrigger: {
       trigger: '#hero-title',
       toggleActions: 'play none reverse reverse',
-      start: 'top 0',
+      start: 'top -5px',
     },
   });
 
