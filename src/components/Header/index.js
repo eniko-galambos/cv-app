@@ -26,7 +26,7 @@ const Header = () => {
       {
         opacity: 1,
         scale: 1,
-        duration: 0.4,
+        duration: 0.5,
         transformOrigin: 'center',
         ease: 'back.out(1.7)',
       },
@@ -165,7 +165,7 @@ const Header = () => {
         </button>
         <nav
           id="menu-nav"
-          className="absolute top-0 right-0 bg-black flex flex-col text-white font-fashion text-sm shadow-md p-8 rounded-3xl"
+          className="absolute top-0 right-0 bg-black flex flex-col text-white font-fashion text-sm shadow-md p-8 rounded-3xl hidden"
         >
           <a
             href="#"
