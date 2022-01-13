@@ -5,7 +5,7 @@ import profileImg from '../../assets/images/profile.jpg';
 const Intro = () => {
   const titleScrolltl = gsap.timeline({
     scrollTrigger: {
-      trigger: '#intro',
+      trigger: '#intro-title',
       toggleActions: 'play none none none',
       start: 500,
     },

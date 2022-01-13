@@ -9,7 +9,6 @@ import Cursor from './components/Cursor';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Intro from './components/Intro';
-import WhoAmI from './components/WhoAmI';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -31,49 +30,14 @@ const App = () => {
     }
   }, [cursorRef]);
 
-  useEffect(() => {
-    const container = document.querySelector('#scroll-container');
-
-    let height;
-
-    const setHeight = () => {
-      height = container.clientHeight;
-      document.body.style.height = height + 'px';
-    };
-
-    ScrollTrigger.addEventListener('refreshInit', setHeight);
-
-    gsap.to(container, {
-      y: () => -(height - document.documentElement.clientHeight),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: document.body,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    window.addEventListener('load', () => {
-      ScrollTrigger.refresh();
-    });
-  });
-
   return (
     <div onMouseMove={onMouseMove}>
       <Cursor ref={cursorRef}></Cursor>
       <Header />
-      <div
-        id="viewport"
-        className="overflow-hidden fixed w-full h-full top-0 left-0 right-0 bottom-0"
-      >
-        <main id="scroll-container" className="absolute overflow-hidden w-full">
-          <Hero />
-          <Intro />
-          <WhoAmI />
-        </main>
-      </div>
+      <main>
+        <Hero />
+        <Intro />
+      </main>
     </div>
   );
 };
