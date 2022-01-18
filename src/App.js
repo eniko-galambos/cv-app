@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Draggable } from 'gsap/Draggable';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import LocomotiveScroll from 'locomotive-scroll';
+import Scrollbar from 'smooth-scrollbar';
 import Cursor from './components/Cursor';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -27,34 +27,33 @@ const App = () => {
 
   // Hooks
   useEffect(() => {
-    const locoScroll = new LocomotiveScroll({
-      el: document.querySelector('.smooth-scroll'),
-      smooth: true,
+    const scroller = document.querySelector('.scroller');
+
+    const bodyScrollBar = Scrollbar.init(scroller, {
+      delegateTo: document,
     });
 
-    locoScroll.on('scroll', ScrollTrigger.update);
-
-    ScrollTrigger.scrollerProxy('.smooth-scroll', {
+    ScrollTrigger.scrollerProxy('.scroller', {
       scrollTop(value) {
-        return arguments.length
-          ? locoScroll.scrollTo(value, 0, 0)
-          : locoScroll.scroll.instance.scroll.y;
+        if (arguments.length) {
+          bodyScrollBar.scrollTop = value;
+        }
+        return bodyScrollBar.scrollTop;
       },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: document.querySelector('.smooth-scroll').style.transform
-        ? 'transform'
-        : 'fixed',
     });
 
-    ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
-    ScrollTrigger.refresh();
+    bodyScrollBar.addListener(ScrollTrigger.update);
+
+    ScrollTrigger.defaults({ scroller: scroller });
+
+    // Only necessary to correct marker position - not needed in production
+    if (document.querySelector('.gsap-marker-scroller-start')) {
+      const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
+
+      bodyScrollBar.addListener(({ offset }) => {
+        gsap.set(markers, { marginTop: -offset.y });
+      });
+    }
   });
 
   useEffect(() => {
@@ -67,7 +66,7 @@ const App = () => {
     <div onMouseMove={onMouseMove}>
       <Cursor ref={cursorRef}></Cursor>
       <Header />
-      <main className="smooth-scroll">
+      <main className="scroller h-screen">
         <Hero />
         <Intro />
         <WhoAmI />

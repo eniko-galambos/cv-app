@@ -7,47 +7,50 @@ const WhoAmI = () => {
     gsap.utils.toArray('.panel').forEach((panel, i) => {
       gsap.fromTo(
         `#panel-${i + 1}`,
-        { y: 0 },
+        { y: innerHeight / 2 },
         {
-          y: innerHeight,
+          y: -innerHeight / 2,
           scrollTrigger: {
             trigger: panel,
-            scrub: 1,
-            toggleActions: 'restart pause reverse pause',
-          },
-        },
-      );
-
-      gsap.fromTo(
-        `#quote-${i + 1}`,
-        { y: 3 * innerHeight },
-        {
-          y: 1.5 * innerHeight,
-          scrollTrigger: {
-            trigger: `#panel-${i + 1}`,
             start: 'top bottom',
-            end: 'bottom bottom',
+            scrub: 0.3,
             toggleActions: 'restart pause reverse pause',
-            scrub: 1,
+            markers: true,
           },
+          ease: 'none',
         },
       );
 
-      gsap.set(`#quote-${i + 1}`, { opacity: 0 });
+      // gsap.fromTo(
+      //   `#quote-${i + 1}`,
+      //   { y: 3 * innerHeight },
+      //   {
+      //     y: 1.5 * innerHeight,
+      //     scrollTrigger: {
+      //       trigger: `#panel-${i + 1}`,
+      //       start: 'top bottom',
+      //       end: 'bottom bottom',
+      //       toggleActions: 'restart pause reverse pause',
+      //       scrub: 1,
+      //     },
+      //   },
+      // );
 
-      gsap.fromTo(
-        `#quote-${i + 1}`,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          scrollTrigger: {
-            trigger: `#panel-${i + 1}`,
-            start: 'bottom bottom',
-            toggleActions: 'restart pause reverse pause',
-            duration: 1.5,
-          },
-        },
-      );
+      // gsap.set(`#quote-${i + 1}`, { opacity: 0 });
+
+      // gsap.fromTo(
+      //   `#quote-${i + 1}`,
+      //   { opacity: 0 },
+      //   {
+      //     opacity: 1,
+      //     scrollTrigger: {
+      //       trigger: `#panel-${i + 1}`,
+      //       start: 'bottom bottom',
+      //       toggleActions: 'restart pause reverse pause',
+      //       duration: 1.5,
+      //     },
+      //   },
+      // );
     });
   };
 
