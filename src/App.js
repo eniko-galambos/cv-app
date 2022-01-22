@@ -5,7 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { Draggable } from 'gsap/Draggable';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import Scrollbar from 'smooth-scrollbar';
+
+import { initSmoothScroller } from './utils';
 import Cursor from './components/Cursor';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -27,33 +28,7 @@ const App = () => {
 
   // Hooks
   useEffect(() => {
-    const scroller = document.querySelector('.scroller');
-
-    const bodyScrollBar = Scrollbar.init(scroller, {
-      delegateTo: document,
-    });
-
-    ScrollTrigger.scrollerProxy('.scroller', {
-      scrollTop(value) {
-        if (arguments.length) {
-          bodyScrollBar.scrollTop = value;
-        }
-        return bodyScrollBar.scrollTop;
-      },
-    });
-
-    bodyScrollBar.addListener(ScrollTrigger.update);
-
-    ScrollTrigger.defaults({ scroller: scroller });
-
-    // Only necessary to correct marker position - not needed in production
-    if (document.querySelector('.gsap-marker-scroller-start')) {
-      const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-
-      bodyScrollBar.addListener(({ offset }) => {
-        gsap.set(markers, { marginTop: -offset.y });
-      });
-    }
+    initSmoothScroller();
   });
 
   useEffect(() => {

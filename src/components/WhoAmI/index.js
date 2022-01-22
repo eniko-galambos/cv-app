@@ -1,5 +1,7 @@
 import gsap from 'gsap';
 import React, { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initSmoothScroller } from '../../utils';
 
 const WhoAmI = () => {
   // Animations
@@ -7,67 +9,74 @@ const WhoAmI = () => {
     gsap.utils.toArray('.panel').forEach((panel, i) => {
       gsap.fromTo(
         `#panel-${i + 1}`,
-        { y: innerHeight / 2 },
+        { y: 0 },
         {
-          y: -innerHeight / 2,
+          y: innerHeight,
           scrollTrigger: {
             trigger: panel,
-            start: 'top bottom',
-            scrub: 0.3,
+            scrub: true,
+            start: 'top top',
             toggleActions: 'restart pause reverse pause',
-            markers: true,
           },
           ease: 'none',
         },
       );
 
-      // gsap.fromTo(
-      //   `#quote-${i + 1}`,
-      //   { y: 3 * innerHeight },
-      //   {
-      //     y: 1.5 * innerHeight,
-      //     scrollTrigger: {
-      //       trigger: `#panel-${i + 1}`,
-      //       start: 'top bottom',
-      //       end: 'bottom bottom',
-      //       toggleActions: 'restart pause reverse pause',
-      //       scrub: 1,
-      //     },
-      //   },
-      // );
+      const fadeInQuote = () => {
+        return gsap.fromTo(
+          `#quote-${i + 1}`,
+          { opacity: 0, y: 0 },
+          {
+            opacity: 1,
+            y: innerHeight / 2,
+            ease: 'none',
+          },
+        );
+      };
 
-      // gsap.set(`#quote-${i + 1}`, { opacity: 0 });
+      const fadeOutQuote = () => {
+        return gsap.fromTo(
+          `#quote-${i + 1}`,
+          { opacity: 1, y: innerHeight / 2 },
+          {
+            opacity: 0,
+            y: innerHeight,
+            ease: 'none',
+          },
+        );
+      };
 
-      // gsap.fromTo(
-      //   `#quote-${i + 1}`,
-      //   { opacity: 0 },
-      //   {
-      //     opacity: 1,
-      //     scrollTrigger: {
-      //       trigger: `#panel-${i + 1}`,
-      //       start: 'bottom bottom',
-      //       toggleActions: 'restart pause reverse pause',
-      //       duration: 1.5,
-      //     },
-      //   },
-      // );
+      const tl = gsap
+        .timeline()
+        .add(fadeInQuote(), '+0')
+        .add(fadeOutQuote(), '+0.5');
+
+      ScrollTrigger.create({
+        trigger: `#panel-${i + 1}`,
+        start: 'top top',
+        end: 'bottom top',
+        toggleActions: 'restart pause reverse pause',
+        scrub: true,
+        animation: tl,
+      });
     });
   };
 
   // Hooks
   useEffect(() => {
+    initSmoothScroller();
     movePanels();
   });
 
   return (
     <section className="bg-black bg-opacity-90">
-      <h2 className="font-newyork text-white text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-16">
+      <h2 className="font-newyork text-white text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-32">
         Who am I?
       </h2>
       <div className="w-screen flex">
         <div id="who-col-1" className="flex-1">
           <div className="w-full h-screen flex">
-            <div className="flex-1">
+            <div className="flex-1 mt-20">
               <p
                 id="quote-1"
                 className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"
@@ -78,7 +87,7 @@ const WhoAmI = () => {
             </div>
           </div>
           <div className="w-full h-screen flex">
-            <div className="flex-1">
+            <div className="flex-1 mt-20">
               <p
                 id="quote-2"
                 className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"
@@ -88,7 +97,7 @@ const WhoAmI = () => {
             </div>
           </div>
           <div className="w-full h-screen flex">
-            <div className="flex-1">
+            <div className="flex-1 mt-20">
               <p
                 id="quote-3"
                 className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"
@@ -99,7 +108,7 @@ const WhoAmI = () => {
             </div>
           </div>
           <div className="w-full h-screen flex">
-            <div className="flex-1">
+            <div className="flex-1 mt-20">
               <p
                 id="quote-4"
                 className="font-newyork text-white text-3xl md:text-5xl lg:text-7xl px-5 lg:px-20"

@@ -1,26 +1,11 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
+import { initSmoothScroller } from '../../utils';
 import Arrow from '../../svg/Arrow';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Hero = () => {
   // Animations
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#hero-title',
-      toggleActions: 'play reset reset reset',
-      start: 'top 1px',
-      end: 'top -1px',
-      once: true,
-    },
-  });
-  const scrolltl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#hero-title',
-      toggleActions: 'play none reverse reverse',
-      start: 'top -5px',
-    },
-  });
-
   const revealTitle = () => {
     return gsap.from('#hero-title span', {
       opacity: 0,
@@ -108,9 +93,20 @@ const Hero = () => {
 
   // Hooks
   useEffect(() => {
-    scrolltl.add(hideMeetMe());
-    scrolltl.add(hideArrow());
-    scrolltl.add(hideTitle());
+    initSmoothScroller();
+
+    const scrolltl = gsap
+      .timeline()
+      .add(hideMeetMe())
+      .add(hideArrow())
+      .add(hideTitle());
+
+    ScrollTrigger.create({
+      trigger: '#hero-title',
+      toggleActions: 'play none reverse reverse',
+      start: 'top -5px',
+      animation: scrolltl,
+    });
 
     gsap.set('#hero-arrow', {
       opacity: 0,
@@ -120,14 +116,28 @@ const Hero = () => {
       opacity: 0,
     });
 
-    tl.add(revealTitle);
-    tl.add(revealArrow, '<1.2');
-    tl.add(revealMeetMe, '>0.3');
-    tl.add(moveArrow, '>1.2');
+    const tl = gsap
+      .timeline()
+      .add(revealTitle)
+      .add(revealArrow, '<1.2')
+      .add(revealMeetMe, '>0.3')
+      .add(moveArrow, '>1.2');
+
+    ScrollTrigger.create({
+      trigger: '#hero',
+      toggleActions: 'play reset reset reset',
+      start: 'top 1px',
+      end: 'top -1px',
+      once: true,
+      animation: tl,
+    });
   });
 
   return (
-    <section className="flex flex-col justify-center h-screen items-center">
+    <section
+      id="hero"
+      className="flex flex-col justify-center h-screen items-center"
+    >
       <div>
         <h1
           id="hero-title"

@@ -1,16 +1,10 @@
 import gsap from 'gsap';
 import React, { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import profileImg from '../../assets/images/profile.jpg';
+import { initSmoothScroller } from '../../utils';
 
 const Intro = () => {
-  const titleScrolltl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#intro-title',
-      toggleActions: 'play none none none',
-      start: 500,
-    },
-  });
-
   // Animations
   const revealTitle = () => {
     return gsap.from('#intro-title', {
@@ -70,8 +64,19 @@ const Intro = () => {
 
   // Hooks
   useEffect(() => {
-    titleScrolltl.add(revealTitle());
-    titleScrolltl.add(revealSubtitle(), 0.5);
+    initSmoothScroller();
+
+    const titleScrolltl = gsap
+      .timeline()
+      .add(revealTitle())
+      .add(revealSubtitle(), 0.5);
+
+    ScrollTrigger.create({
+      trigger: '#intro',
+      toggleActions: 'play none none none',
+      start: 500,
+      animation: titleScrolltl,
+    });
 
     moveFadedTitle();
     rotateImageText();
