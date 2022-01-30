@@ -159,61 +159,61 @@ const Header = () => {
         <button
           id="menu-button"
           type="button"
-          className="absolute top-0 right-0 font-fashion text-xs uppercase rounded-full bg-vivid-red py-5 px-2 shadow-md"
+          className="absolute top-0 right-0 font-fashion text-xs uppercase rounded-full bg-vivid-red py-5 px-2 shadow-xl"
         >
           Menu
         </button>
         <nav
           id="menu-nav"
-          className="absolute top-0 right-0 bg-black flex flex-col text-white font-fashion text-sm shadow-md p-8 rounded-3xl hidden"
+          className="absolute top-0 right-0 bg-black flex flex-col text-white font-fashion text-sm shadow-2xl p-10 w-60 h-60 items-center rounded-full hidden"
         >
           <a
             href="#"
-            className="mb-3"
+            className="mb-2"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
-            who am I?
+            Who am I?
             <hr className="bg-white h-px w-full" />
           </a>
           <a
             href="#"
-            className="mb-3"
+            className="mb-2"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
-            education
+            Education
             <hr className="bg-white h-px w-full" />
           </a>
           <a
             href="#"
-            className="mb-3"
+            className="mb-2"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
-            workplace
+            Workplace
             <hr className="bg-white h-px w-full" />
           </a>
           <a
             href="#"
-            className="mb-3"
+            className="mb-2"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
-            skills
+            Skills
             <hr className="bg-white h-px w-full" />
           </a>
           <a
             href="#"
-            className="mb-3"
+            className="mb-2"
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
-            languages
+            Languages
             <hr className="bg-white h-px w-full" />
           </a>
           <a href="#" onMouseOver={drawDivider} onMouseOut={hideDivider}>
-            contact
+            Contact
             <hr className="bg-white h-px w-full" />
           </a>
         </nav>
