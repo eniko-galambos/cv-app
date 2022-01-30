@@ -95,19 +95,6 @@ const Hero = () => {
   useEffect(() => {
     initSmoothScroller();
 
-    const scrolltl = gsap
-      .timeline()
-      .add(hideMeetMe())
-      .add(hideArrow())
-      .add(hideTitle());
-
-    ScrollTrigger.create({
-      trigger: '#hero-title',
-      toggleActions: 'play none reverse reverse',
-      start: 'top -5px',
-      animation: scrolltl,
-    });
-
     gsap.set('#hero-arrow', {
       opacity: 0,
       rotate: -10,
@@ -116,21 +103,27 @@ const Hero = () => {
       opacity: 0,
     });
 
-    const tl = gsap
-      .timeline()
+    gsap
+      .timeline({
+        onComplete: () => {
+          const scrolltl = gsap
+            .timeline()
+            .add(hideMeetMe())
+            .add(hideArrow())
+            .add(hideTitle());
+
+          ScrollTrigger.create({
+            trigger: '#hero-title',
+            toggleActions: 'play none reverse reverse',
+            start: 'top 50',
+            animation: scrolltl,
+          });
+        },
+      })
       .add(revealTitle)
       .add(revealArrow, '<1.2')
       .add(revealMeetMe, '>0.3')
       .add(moveArrow, '>1.2');
-
-    ScrollTrigger.create({
-      trigger: '#hero',
-      toggleActions: 'play reset reset reset',
-      start: 'top 1px',
-      end: 'top -1px',
-      once: true,
-      animation: tl,
-    });
   });
 
   return (
