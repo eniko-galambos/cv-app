@@ -23,36 +23,58 @@ const Education = () => {
     },
   ];
 
+  // Animations
+  const moveFadedTitle = () => {
+    gsap.fromTo(
+      '#education-faded-title',
+      { y: 50 },
+      {
+        y: -250,
+        scrollTrigger: {
+          trigger: '#education',
+          toggleActions: 'restart pause reverse pause',
+          start: 'top 100%',
+          scrub: 0.4,
+        },
+      },
+    );
+  };
+
+  const moveTimeline = () => {
+    let container = document.getElementById('education-items');
+    return gsap.fromTo(
+      container,
+      { x: 0 },
+      {
+        x: () =>
+          -(container.scrollWidth - document.documentElement.clientWidth) +
+          'px',
+        ease: 'none',
+        duration: 5,
+      },
+    );
+  };
+
+  const drawTimeline = () => {
+    var path = document.querySelector('#education-path');
+    var l = path.getTotalLength();
+
+    gsap.set(path, { strokeDasharray: l });
+    return gsap.fromTo(
+      path,
+      { strokeDashoffset: l },
+      { strokeDashoffset: 0, ease: 'none', duration: 5 },
+    );
+  };
+
+  // Hooks
   useEffect(() => {
     let container = document.getElementById('education-items');
 
-    const move = () => {
-      return gsap.fromTo(
-        container,
-        { x: 0 },
-        {
-          x: () =>
-            -(container.scrollWidth - document.documentElement.clientWidth) +
-            'px',
-          ease: 'none',
-          duration: 5,
-        },
-      );
-    };
-
-    const draw = () => {
-      var path = document.querySelector('#education-path');
-      var l = path.getTotalLength();
-
-      gsap.set(path, { strokeDasharray: l });
-      return gsap.fromTo(
-        path,
-        { strokeDashoffset: l },
-        { strokeDashoffset: 0, ease: 'none', duration: 5 },
-      );
-    };
-
-    const tl = gsap.timeline().add('start').add(move(), '+0').add(draw(), '+0');
+    const tl = gsap
+      .timeline()
+      .add(moveTimeline(), '+0')
+      .add(drawTimeline(), '+0');
 
     ScrollTrigger.create({
       trigger: container,
@@ -62,11 +84,16 @@ const Education = () => {
       pin: true,
       animation: tl,
     });
+
+    moveFadedTitle();
   });
 
   return (
     <section id="education" className="overflow-x-hidden">
-      <h2 className="font-newyork text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-36">
+      <h2
+        id="education-faded-title"
+        className="font-newyork text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-36"
+      >
         Education
       </h2>
       <div

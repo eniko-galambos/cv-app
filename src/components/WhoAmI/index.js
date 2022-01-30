@@ -62,15 +62,35 @@ const WhoAmI = () => {
     });
   };
 
+  const moveFadedTitle = () => {
+    gsap.fromTo(
+      '#who-am-i-faded-title',
+      { y: 50 },
+      {
+        y: -250,
+        scrollTrigger: {
+          trigger: '#who-am-i',
+          toggleActions: 'restart pause reverse pause',
+          start: 'top 100%',
+          scrub: 0.4,
+        },
+      },
+    );
+  };
+
   // Hooks
   useEffect(() => {
     initSmoothScroller();
     movePanels();
+    moveFadedTitle();
   });
 
   return (
-    <section className="bg-black bg-opacity-90">
-      <h2 className="font-newyork text-white text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-36">
+    <section id="who-am-i" className="bg-black bg-opacity-90">
+      <h2
+        id="who-am-i-faded-title"
+        className="font-newyork text-white text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-36"
+      >
         Who am I?
       </h2>
       <div className="w-screen flex">
