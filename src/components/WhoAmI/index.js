@@ -70,7 +70,7 @@ const WhoAmI = () => {
 
   return (
     <section className="bg-black bg-opacity-90">
-      <h2 className="font-newyork text-white text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-32">
+      <h2 className="font-newyork text-white text-6xl md:text-7xl lg:text-9xl opacity-40 text-center py-36">
         Who am I?
       </h2>
       <div className="w-screen flex">
@@ -133,7 +133,10 @@ const WhoAmI = () => {
           </div>
         </div>
       </div>
-      <div className="h-screen w-screen"></div>
+      <div className="h-screen w-screen flex">
+        <div className="flex-1"></div>
+        <div className="flex-1 bg-gray-50"></div>
+      </div>
     </section>
   );
 };

@@ -12,6 +12,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Intro from './components/Intro';
 import WhoAmI from './components/WhoAmI';
+import Education from './components/Education';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -45,6 +46,7 @@ const App = () => {
         <Hero />
         <Intro />
         <WhoAmI />
+        <Education />
       </main>
     </div>
   );
