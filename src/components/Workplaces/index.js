@@ -102,10 +102,7 @@ const Workplaces = () => {
   });
 
   return (
-    <section
-      id="workplaces"
-      className="overflow-x-hidden bg-vivid-red bg-opacity-90"
-    >
+    <section id="workplaces" className="overflow-x-hidden bg-baby-rose">
       <h2
         id="workplaces-faded-title"
         className="font-newyork text-white text-6xl md:text-7xl lg:text-9xl opacity-80 text-center py-36"
