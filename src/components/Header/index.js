@@ -191,7 +191,7 @@ const Header = () => {
             onMouseOver={drawDivider}
             onMouseOut={hideDivider}
           >
-            Workplace
+            Workplaces
             <hr className="bg-white h-px w-full" />
           </a>
           <a
