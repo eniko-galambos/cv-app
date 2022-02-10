@@ -14,6 +14,7 @@ import Intro from './components/Intro';
 import WhoAmI from './components/WhoAmI';
 import Education from './components/Education';
 import Workplaces from './components/Workplaces';
+import TechnicalKnowledge from './components/TechnicalKnowledge';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -49,6 +50,7 @@ const App = () => {
         <WhoAmI />
         <Education />
         <Workplaces />
+        <TechnicalKnowledge />
       </main>
     </div>
   );

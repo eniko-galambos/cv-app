@@ -7,7 +7,7 @@ module.exports = {
         'gray-sand': '#e7ddd5',
         'spring-green': '#d4ff29',
         'warm-orange': '#f2721a',
-        'baby-rose': '#ffc4e1',
+        'gradient-peach': '#f36455',
       },
       fill: (theme) => theme('colors'),
       fontFamily: {
@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundImage: {
         'me-madeira': "url('/src/assets/images/madeira.jpg')",
+        sunset: "url('/src/assets/images/sunset.png')",
       },
     },
   },

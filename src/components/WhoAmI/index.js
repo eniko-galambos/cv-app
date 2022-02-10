@@ -146,7 +146,7 @@ const WhoAmI = () => {
             <div className="flex-1 bg-me-madeira bg-center"></div>
           </div>
           <div id="panel-3" className="panel w-full h-screen flex">
-            <div className="flex-1 bg-baby-rose"></div>
+            <div className="flex-1 bg-spring-green"></div>
           </div>
           <div id="panel-4" className="panel w-full h-screen flex">
             <div className="flex-1 bg-gray-50"></div>
